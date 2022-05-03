@@ -1,0 +1,20 @@
+<div class="card">
+  <lib-toastify-toast-container></lib-toastify-toast-container>
+  <div class="card-body">
+    <div class="row">
+      <ng-container *ngFor="let p of post">
+      <div class="col-sm-4 col-md-4">
+        <div class="card shadow"width="300px">
+          <div class="card-body">
+           <img class="card-img img-fluid" src="{{p.image}}" height="250px"width="296px">
+           <h4 align="center" style="margin:3px;color:coral">{{p.title}}</h4>
+           <p  align="center" style="margin:2px;"class="lead"><small>{{p.body}}</small></p>
+           <p style="margin:2px;" class="btn btn-outline-secondary py-3 btn-small"><small>{{p.date}}</small></p>
+          </div>
+        </div><br/>
+      </div>
+    </ng-container>
+    </div>
+
+  </div>
+</div>

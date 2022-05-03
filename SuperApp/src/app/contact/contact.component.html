@@ -1,0 +1,44 @@
+<div align="center" style=" margin:5px;margin-bottom:15px; " class="card shadow">
+  <div class="card-body">
+    <div class="container-fluid">
+   <lib-toastify-toast-container></lib-toastify-toast-container>
+      <div class="row">
+        <div class="col-sm-12 col-sm-6" id="message-1">
+          <h2 class="h4"><i class="fa fa-envelope"></i> Contact Us</h2>
+          <div class="form-group mb-3">
+
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-user-o"></i></span>
+              <input class="form-control" type="text" id="from-name-1" [(ngModel)]="contact.fullname" name="fullname"  placeholder="Full Name" />
+            </div>
+          </div>
+          <div class="form-group mb-3">
+
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+              <input class="form-control" type="text"  [(ngModel)]="contact.email" name="email"  placeholder="Email Address">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group mb-3">
+
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                <input class="form-control" type="text"  [(ngModel)]="contact.phoneNumber"  name="phoneNumber" placeholder="Primary Phone">
+              </div>
+            </div>
+
+
+          </div>
+          <div class="form-group mb-3">
+
+            <textarea class="form-control"   [(ngModel)]="contact.message" name="message" placeholder="Enter Comments" rows="5"></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <div class="row">
+              <div class="col"><button class="btn btn-primary d-block w-100" (click)="submit()" type="submit">Submit <i class="fa fa-chevron-circle-right"></i></button></div>
+            </div>
+          </div>
+        </div>
+        <hr class="d-flex d-md-none">
+      </div>

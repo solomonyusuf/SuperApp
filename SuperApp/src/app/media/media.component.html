@@ -1,0 +1,53 @@
+<div style=" margin: 5px;">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1"><i class="fa fa-music" style="color: var(--bs-blue);"></i></a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link " role="tab" data-bs-toggle="tab" href="#tab-2"><i class="fa fa-youtube-play" style="color: var(--bs-blue);"></i></a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" role="tabpanel" id="tab-1">
+     <lib-toastify-toast-container></lib-toastify-toast-container>
+            <div class="container">
+              <form class=" form-control navbar-search">
+                <div class="" style="margin-top:10px;margin-bottom:10px;">
+                  <input  name="audios" [(ngModel)]="audios" (ngModelChange)="searchAudio()" class="bg-light form-control" type="text" placeholder="Search for sermons ..."></div>
+            </form><br/>
+                <div class="row">
+                  <ng-container *ngFor="let a of audio">
+                  <div class="">
+                    <div class="card-body shadow " width="400px">
+                      <img class="rounded-circle me-2" width="30" height="30" src="{{a.image}}"/>{{a.name}}<br>
+                      <audio width="300px" controls="controls"><source src="{{a.audio}}" type="audio/mp3" /></audio><br/>
+                    <p class="lead">{{a.artist}}</p>
+                    <button class="btn btn-success" (click)="download(a.audio)">Download</button>
+                    </div><br/>
+                  </div>
+                </ng-container>
+                </div>
+            </div>
+
+
+      </div>
+    <div class="tab-pane" role="tabpanel" id="tab-2">
+      <div class="container">
+        <form class=" form-control navbar-search">
+          <div class="" style="margin-top:10px;margin-bottom:10px;">
+            <input  name="videos"[(ngModel)]="videos" (ngModelChange)="searchVideo()" class="bg-light form-control" type="text" placeholder="Search for videos ..."></div>
+      </form><br/>
+          <div class="row">
+            <ng-container *ngFor="let v of video">
+            <div>
+              <div>
+                <video align="center" width="300px" height="300px" controls="controls"><source src="{{v.video}}" type="video/mp4" /></video><br/>
+                <div class="card-body shadow"  width="300px" style="color:crimson;font-style:italic;" > {{v.name}}
+                  <p class="lead">{{v.artist}}</p>
+                </div>
+               <br>
+              </div><br/>
+            </div>
+          </ng-container>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
